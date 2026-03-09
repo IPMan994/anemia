@@ -10,16 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
     <style>
          :root {
-            --crimson: #8B1A1A;
-            --crimson-lt: #B33A3A;
-            --crimson-xs: #F5E6E6;
-            --blush: #FAF0F0;
-            --ink: #1C1C1E;
-            --slate: #4A4A52;
-            --mist: #F7F7F9;
-            --white: #FFFFFF;
-            --gold: #C9933A;
-            --line: rgba(139, 26, 26, 0.12);
+            --crimson: #850e35;
+            --crimson-lt: #ee6983;
+            --crimson-xs: #ffeaee;
+            --blush: #fff5e4;
+            --ink: #2a0e1a;
+            --slate: #5c3a47;
+            --mist: #fff5e4;
+            --white: #ffffff;
+            --gold: #ee6983;
+            --line: rgba(133, 14, 53, 0.13);
         }
         
         *,
@@ -48,7 +48,7 @@
             left: 0;
             right: 0;
             z-index: 999;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 245, 228, 0.95);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--line);
             padding: 0 2rem;
@@ -161,7 +161,7 @@
             top: -80px;
             width: 55vw;
             height: 110vh;
-            background: radial-gradient(ellipse at 60% 40%, #f5dede 0%, #fdf0f0 50%, transparent 80%);
+            background: radial-gradient(ellipse at 60% 40%, #ffc4c4 0%, #fff5e4 50%, transparent 80%);
             border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
             z-index: 0;
         }
@@ -238,13 +238,13 @@
             padding: .85rem 1.75rem;
             border-radius: 100px;
             text-decoration: none;
-            box-shadow: 0 8px 24px rgba(139, 26, 26, .28);
+            box-shadow: 0 8px 24px rgba(133, 14, 53, .32);
             transition: transform .25s, box-shadow .25s;
         }
         
         .hero-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 14px 32px rgba(139, 26, 26, .35);
+            box-shadow: 0 14px 32px rgba(133, 14, 53, .42);
         }
         
         .hero-stats {
@@ -489,7 +489,7 @@
         
         .lima-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(139, 26, 26, .12);
+            box-shadow: 0 20px 40px rgba(133, 14, 53, .14);
             background: var(--crimson);
         }
         
@@ -595,7 +595,7 @@
         }
         
         .dampak-card.danger {
-            background: linear-gradient(135deg, #8B1A1A 0%, #B33A3A 100%);
+            background: linear-gradient(135deg, #850e35 0%, #ee6983 100%);
         }
         
         .dampak-card.danger h3,
@@ -1044,62 +1044,62 @@
                 <svg viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#FFF5F5"/>
-              <stop offset="100%" stop-color="#FAEAEA"/>
+              <stop offset="0%" stop-color="#fff5e4"/>
+              <stop offset="100%" stop-color="#ffc4c4"/>
             </radialGradient>
             <radialGradient id="rbc1" cx="40%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="#E05555"/>
-              <stop offset="100%" stop-color="#8B1A1A"/>
+              <stop offset="0%" stop-color="#ee6983"/>
+              <stop offset="100%" stop-color="#850e35"/>
             </radialGradient>
             <radialGradient id="rbc2" cx="40%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="#C44040"/>
-              <stop offset="100%" stop-color="#6B1010"/>
+              <stop offset="0%" stop-color="#c4456a"/>
+              <stop offset="100%" stop-color="#6a0a2a"/>
             </radialGradient>
             <radialGradient id="pale" cx="40%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="#FECACA"/>
-              <stop offset="100%" stop-color="#FCA5A5"/>
+              <stop offset="0%" stop-color="#ffc4c4"/>
+              <stop offset="100%" stop-color="#ffaabb"/>
             </radialGradient>
             <filter id="shadow">
-              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#8B1A1A" flood-opacity="0.2"/>
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#850e35" flood-opacity="0.2"/>
             </filter>
           </defs>
           <!-- BG circle -->
-          <circle cx="180" cy="180" r="160" fill="url(#bg)" stroke="#8B1A1A" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+          <circle cx="180" cy="180" r="160" fill="url(#bg)" stroke="#850e35" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
           <!-- Flow lines -->
-          <path d="M 40 200 Q 100 140 180 160 Q 260 180 310 130" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5 5" opacity=".2" fill="none"/>
-          <path d="M 50 230 Q 120 210 200 220 Q 270 225 330 190" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5 5" opacity=".15" fill="none"/>
+          <path d="M 40 200 Q 100 140 180 160 Q 260 180 310 130" stroke="#850e35" stroke-width="1.5" stroke-dasharray="5 5" opacity=".2" fill="none"/>
+          <path d="M 50 230 Q 120 210 200 220 Q 270 225 330 190" stroke="#850e35" stroke-width="1.5" stroke-dasharray="5 5" opacity=".15" fill="none"/>
           <!-- Healthy RBCs -->
           <g filter="url(#shadow)" style="animation:float1 3.5s ease-in-out infinite">
             <ellipse cx="130" cy="145" rx="44" ry="28" fill="url(#rbc1)"/>
-            <ellipse cx="130" cy="145" rx="24" ry="13" fill="#6B1010" opacity=".45"/>
+            <ellipse cx="130" cy="145" rx="24" ry="13" fill="#6a0a2a" opacity=".45"/>
           </g>
           <g filter="url(#shadow)" style="animation:float2 4s ease-in-out infinite">
             <ellipse cx="240" cy="135" rx="38" ry="24" fill="url(#rbc1)"/>
-            <ellipse cx="240" cy="135" rx="20" ry="10" fill="#6B1010" opacity=".45"/>
+            <ellipse cx="240" cy="135" rx="20" ry="10" fill="#6a0a2a" opacity=".45"/>
           </g>
           <g filter="url(#shadow)" style="animation:float3 3.8s ease-in-out infinite">
             <ellipse cx="185" cy="210" rx="42" ry="26" fill="url(#rbc2)"/>
-            <ellipse cx="185" cy="210" rx="22" ry="12" fill="#5A0E0E" opacity=".45"/>
+            <ellipse cx="185" cy="210" rx="22" ry="12" fill="#5a0a28" opacity=".45"/>
           </g>
           <g filter="url(#shadow)" style="animation:float1 5s ease-in-out infinite">
             <ellipse cx="100" cy="225" rx="34" ry="21" fill="url(#rbc1)"/>
-            <ellipse cx="100" cy="225" rx="18" ry="9" fill="#6B1010" opacity=".45"/>
+            <ellipse cx="100" cy="225" rx="18" ry="9" fill="#6a0a2a" opacity=".45"/>
           </g>
           <!-- Pale/anemia RBCs -->
           <g style="animation:float2 4.5s ease-in-out infinite">
-            <ellipse cx="265" cy="215" rx="36" ry="22" fill="url(#pale)" stroke="#FCA5A5" stroke-width="1.5"/>
-            <ellipse cx="265" cy="215" rx="18" ry="9" fill="#FEE2E2" opacity=".7"/>
+            <ellipse cx="265" cy="215" rx="36" ry="22" fill="url(#pale)" stroke="#ffaabb" stroke-width="1.5"/>
+            <ellipse cx="265" cy="215" rx="18" ry="9" fill="#ffe8ee" opacity=".7"/>
           </g>
           <g style="animation:float3 3.2s ease-in-out infinite">
-            <ellipse cx="155" cy="285" rx="30" ry="18" fill="url(#pale)" stroke="#FCA5A5" stroke-width="1.5"/>
-            <ellipse cx="155" cy="285" rx="15" ry="7" fill="#FEE2E2" opacity=".7"/>
+            <ellipse cx="155" cy="285" rx="30" ry="18" fill="url(#pale)" stroke="#ffaabb" stroke-width="1.5"/>
+            <ellipse cx="155" cy="285" rx="15" ry="7" fill="#ffe8ee" opacity=".7"/>
           </g>
           <!-- Labels -->
-          <text x="74" y="182" font-family="DM Sans" font-size="10" fill="#8B1A1A" font-weight="600">Sel Darah Merah Sehat</text>
-          <text x="220" y="252" font-family="DM Sans" font-size="10" fill="#B33A3A" font-weight="600">Sel Pucat (Anemia)</text>
+          <text x="74" y="182" font-family="DM Sans" font-size="10" fill="#850e35" font-weight="600">Sel Darah Merah Sehat</text>
+          <text x="220" y="252" font-family="DM Sans" font-size="10" fill="#ee6983" font-weight="600">Sel Pucat (Anemia)</text>
           <!-- Center Hb badge -->
           <circle cx="180" cy="340" r="0" fill="none"/>
-          <rect x="65" y="315" width="230" height="36" rx="18" fill="#8B1A1A"/>
+          <rect x="65" y="315" width="230" height="36" rx="18" fill="#850e35"/>
           <text x="180" y="338" font-family="Playfair Display" font-size="13" fill="white" text-anchor="middle" font-weight="700">Hemoglobin &lt; 12 g/dL → Anemia</text>
         </svg>
             </div>
