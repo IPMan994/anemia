@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenali Anemia — Edukasi Kesehatan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <style>
+         :root {
+            --crimson: #8B1A1A;
+            --crimson-lt: #B33A3A;
+            --crimson-xs: #F5E6E6;
+            --blush: #FAF0F0;
+            --ink: #1C1C1E;
+            --slate: #4A4A52;
+            --mist: #F7F7F9;
+            --white: #FFFFFF;
+            --gold: #C9933A;
+            --line: rgba(139, 26, 26, 0.12);
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+        /* ── NAV ── */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--crimson);
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        
+        .nav-brand span.dot {
+            width: 10px;
+            height: 10px;
+            background: var(--crimson);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: .5;
+                transform: scale(1.3);
+            }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-size: .82rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            color: var(--slate);
+            text-decoration: none;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color .25s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--crimson);
+            transition: width .3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--crimson);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--crimson);
+            border-radius: 2px;
+            transition: .3s;
+        }
+        /* ── HERO ── */
+        
+        #hero {
+            min-height: 100vh;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 64px;
+        }
+        
+        .hero-bg-shape {
+            position: absolute;
+            right: -60px;
+            top: -80px;
+            width: 55vw;
+            height: 110vh;
+            background: radial-gradient(ellipse at 60% 40%, #f5dede 0%, #fdf0f0 50%, transparent 80%);
+            border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+            z-index: 0;
+        }
+        
+        .hero-left {
+            padding: 4rem 4rem 4rem 6vw;
+            position: relative;
+            z-index: 1;
+            animation: fadeUp .9s ease both;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(32px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--crimson-xs);
+            color: var(--crimson);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .45rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+        
+        h1 em {
+            color: var(--crimson);
+            font-style: italic;
+        }
+        
+        .hero-sub {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--slate);
+            max-width: 440px;
+            margin-bottom: 2.25rem;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .65rem;
+            background: var(--crimson);
+            color: var(--white);
+            font-size: .88rem;
+            font-weight: 600;
+            letter-spacing: .03em;
+            padding: .85rem 1.75rem;
+            border-radius: 100px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(139, 26, 26, .28);
+            transition: transform .25s, box-shadow .25s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(139, 26, 26, .35);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--crimson);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: .75rem;
+            color: var(--slate);
+            margin-top: .25rem;
+            font-weight: 500;
+            letter-spacing: .03em;
+        }
+        
+        .hero-right {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 6vw 4rem 2rem;
+            animation: fadeUp .9s .2s ease both;
+        }
+        
+        .rbc-diagram {
+            width: min(360px, 80vw);
+            aspect-ratio: 1;
+            position: relative;
+        }
+        
+        .rbc-diagram svg {
+            width: 100%;
+            height: 100%;
+        }
+        /* ── SECTION BASE ── */
+        
+        section {
+            padding: 6rem 6vw;
+        }
+        
+        .section-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--crimson);
+            margin-bottom: .75rem;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+        
+        .lead {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--slate);
+            max-width: 680px;
+        }
+        /* ── PENGERTIAN ── */
+        
+        #pengertian {
+            background: var(--mist);
+        }
+        
+        .def-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .def-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--line);
+            transition: transform .3s, box-shadow .3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .def-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--crimson), var(--crimson-lt));
+        }
+        
+        .def-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+        }
+        
+        .def-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--crimson-xs);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .def-card-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--crimson);
+        }
+        
+        .def-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: .6rem;
+            color: var(--ink);
+        }
+        
+        .def-card p {
+            font-size: .9rem;
+            line-height: 1.7;
+            color: var(--slate);
+        }
+        /* ── PENYEBAB ── */
+        
+        #penyebab {
+            background: var(--white);
+        }
+        
+        .cause-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+        
+        .cause-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+            padding-bottom: .6rem;
+            border-bottom: 2px solid var(--line);
+        }
+        
+        .cause-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding: .9rem;
+            border-radius: 12px;
+            background: var(--mist);
+            border: 1px solid transparent;
+            transition: border-color .25s, background .25s;
+            cursor: default;
+        }
+        
+        .cause-item:hover {
+            background: var(--crimson-xs);
+            border-color: var(--crimson);
+        }
+        
+        .cause-num {
+            width: 28px;
+            height: 28px;
+            background: var(--crimson);
+            color: var(--white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .7rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .cause-item strong {
+            display: block;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: .2rem;
+        }
+        
+        .cause-item p {
+            font-size: .82rem;
+            line-height: 1.6;
+            color: var(--slate);
+        }
+        /* ── GEJALA ── */
+        
+        #gejala {
+            background: var(--blush);
+        }
+        
+        .lima-l-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        
+        .lima-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem 1rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--line);
+            transition: transform .3s, box-shadow .3s, background .3s;
+            cursor: default;
+        }
+        
+        .lima-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 26, 26, .12);
+            background: var(--crimson);
+        }
+        
+        .lima-card:hover .lima-letter,
+        .lima-card:hover .lima-word,
+        .lima-card:hover .lima-desc {
+            color: var(--white);
+        }
+        
+        .lima-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--crimson);
+            line-height: 1;
+            transition: color .3s;
+        }
+        
+        .lima-word {
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            color: var(--ink);
+            margin: .3rem 0;
+            transition: color .3s;
+        }
+        
+        .lima-desc {
+            font-size: .75rem;
+            line-height: 1.5;
+            color: var(--slate);
+            transition: color .3s;
+        }
+        
+        .other-symptoms {
+            margin-top: 3rem;
+        }
+        
+        .other-symptoms h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+        
+        .sym-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .sym-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            background: var(--white);
+            border-radius: 12px;
+            padding: .9rem 1rem;
+            font-size: .85rem;
+            color: var(--ink);
+            font-weight: 500;
+            border: 1px solid var(--line);
+            transition: border-color .25s, transform .25s;
+        }
+        
+        .sym-item:hover {
+            border-color: var(--crimson);
+            transform: translateX(4px);
+        }
+        
+        .sym-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--crimson);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        /* ── DAMPAK ── */
+        
+        #dampak {
+            background: var(--white);
+        }
+        
+        .dampak-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .dampak-card {
+            border-radius: 20px;
+            padding: 2rem;
+            background: var(--mist);
+            border: 1px solid var(--line);
+            transition: transform .3s, box-shadow .3s;
+        }
+        
+        .dampak-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, .1);
+        }
+        
+        .dampak-card.danger {
+            background: linear-gradient(135deg, #8B1A1A 0%, #B33A3A 100%);
+        }
+        
+        .dampak-card.danger h3,
+        .dampak-card.danger p {
+            color: var(--white);
+        }
+        
+        .dampak-card.danger .d-icon-wrap {
+            background: rgba(255, 255, 255, .15);
+        }
+        
+        .d-icon-wrap {
+            width: 44px;
+            height: 44px;
+            background: var(--crimson-xs);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .d-icon-wrap svg {
+            width: 22px;
+            height: 22px;
+            color: var(--crimson);
+        }
+        
+        .dampak-card.danger .d-icon-wrap svg {
+            color: var(--white);
+        }
+        
+        .dampak-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: .5rem;
+        }
+        
+        .dampak-card p {
+            font-size: .83rem;
+            line-height: 1.65;
+            color: var(--slate);
+        }
+        /* ── DIAGNOSIS ── */
+        
+        #diagnosis {
+            background: var(--mist);
+        }
+        
+        .diag-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+        
+        .diag-steps {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+        
+        .diag-step {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 1rem;
+            align-items: start;
+            position: relative;
+        }
+        
+        .diag-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 44px;
+            width: 2px;
+            height: calc(100% + .5rem);
+            background: var(--line);
+        }
+        
+        .step-circle {
+            width: 44px;
+            height: 44px;
+            background: var(--white);
+            border: 2px solid var(--line);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--crimson);
+            transition: background .3s, border-color .3s;
+            flex-shrink: 0;
+        }
+        
+        .diag-step:hover .step-circle {
+            background: var(--crimson);
+            border-color: var(--crimson);
+            color: var(--white);
+        }
+        
+        .step-content {
+            padding: 0 0 1.75rem;
+        }
+        
+        .step-content strong {
+            display: block;
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: .25rem;
+        }
+        
+        .step-content p {
+            font-size: .82rem;
+            line-height: 1.65;
+            color: var(--slate);
+        }
+        
+        .cbc-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--line);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .05);
+        }
+        
+        .cbc-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+        
+        .cbc-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .82rem;
+        }
+        
+        .cbc-table thead tr {
+            background: var(--crimson);
+            color: var(--white);
+        }
+        
+        .cbc-table thead th {
+            padding: .7rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: .03em;
+        }
+        
+        .cbc-table thead th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+        
+        .cbc-table thead th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+        
+        .cbc-table tbody tr {
+            border-bottom: 1px solid var(--line);
+            transition: background .2s;
+        }
+        
+        .cbc-table tbody tr:hover {
+            background: var(--crimson-xs);
+        }
+        
+        .cbc-table td {
+            padding: .7rem 1rem;
+            color: var(--slate);
+        }
+        
+        .cbc-table td:first-child {
+            font-weight: 600;
+            color: var(--ink);
+        }
+        
+        .normal-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: .7rem;
+            font-weight: 700;
+            padding: .2rem .55rem;
+            border-radius: 100px;
+        }
+        
+        .anemia-tag {
+            display: inline-block;
+            background: var(--crimson-xs);
+            color: var(--crimson);
+            font-size: .7rem;
+            font-weight: 700;
+            padding: .2rem .55rem;
+            border-radius: 100px;
+        }
+        /* ── PENCEGAHAN ── */
+        
+        #pencegahan {
+            background: var(--blush);
+        }
+        
+        .prev-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .prev-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--line);
+            transition: transform .3s, box-shadow .3s;
+        }
+        
+        .prev-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+        }
+        
+        .prev-card-head {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .prev-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--crimson-xs);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .prev-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--crimson);
+        }
+        
+        .prev-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        
+        .food-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+        
+        .food-list li {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            font-size: .85rem;
+            color: var(--slate);
+            line-height: 1.5;
+        }
+        
+        .food-list li::before {
+            content: '✦';
+            color: var(--crimson);
+            font-size: .5rem;
+            flex-shrink: 0;
+        }
+        /* ── FOOTER ── */
+        
+        footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, .5);
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: .8rem;
+            line-height: 1.8;
+        }
+        
+        footer strong {
+            color: var(--white);
+        }
+        
+        footer a {
+            color: var(--crimson-lt);
+            text-decoration: none;
+        }
+        /* ── SCROLL REVEAL ── */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ── RESPONSIVE ── */
+        
+        @media (max-width: 1024px) {
+            .lima-l-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .dampak-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.25rem;
+            }
+            #hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-left {
+                padding: 5rem 1.5rem 2rem;
+            }
+            .hero-right {
+                padding: 0 1.5rem 4rem;
+            }
+            .hero-sub {
+                margin: 0 auto 2rem;
+            }
+            .hero-cta {
+                margin: 0 auto;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .def-grid,
+            .cause-layout,
+            .diag-layout,
+            .prev-grid {
+                grid-template-columns: 1fr;
+            }
+            .lima-l-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sym-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .dampak-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                inset: 64px 0 0;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .lima-l-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .sym-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-brand">
+            <span class="dot"></span> Kenali Anemia
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#pengertian">Pengertian</a></li>
+            <li><a href="#penyebab">Penyebab</a></li>
+            <li><a href="#gejala">Gejala</a></li>
+            <li><a href="#dampak">Dampak</a></li>
+            <li><a href="#diagnosis">Diagnosis</a></li>
+            <li><a href="#pencegahan">Pencegahan</a></li>
+        </ul>
+        <div class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-bg-shape"></div>
+        <div class="hero-left">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.5 22 2 17.5 2 12C2 8.4 3.9 5.3 6.8 3.5L8 8L12 2L16 8L17.2 3.5C20.1 5.3 22 8.4 22 12C22 17.5 17.5 22 12 22Z"/></svg> Edukasi Kesehatan
+            </div>
+            <h1>Pahami <em>Anemia</em><br/>Sebelum Terlambat</h1>
+            <p class="hero-sub">Anemia bukan sekadar "kurang darah" biasa. Kondisi ini memengaruhi jutaan orang Indonesia dan dapat berdampak serius jika diabaikan. Kenali lebih dalam—mulai dari penyebab hingga cara mencegahnya.</p>
+            <a href="#pengertian" class="hero-cta">
+        Mulai Belajar
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">1.92M</span>
+                    <span class="stat-label">Kasus di Indonesia (2023)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">32%</span>
+                    <span class="stat-label">Ibu hamil terdampak</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">5L</span>
+                    <span class="stat-label">Tanda-tanda utama</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="rbc-diagram">
+                <svg viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFF5F5"/>
+              <stop offset="100%" stop-color="#FAEAEA"/>
+            </radialGradient>
+            <radialGradient id="rbc1" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#E05555"/>
+              <stop offset="100%" stop-color="#8B1A1A"/>
+            </radialGradient>
+            <radialGradient id="rbc2" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#C44040"/>
+              <stop offset="100%" stop-color="#6B1010"/>
+            </radialGradient>
+            <radialGradient id="pale" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#FECACA"/>
+              <stop offset="100%" stop-color="#FCA5A5"/>
+            </radialGradient>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#8B1A1A" flood-opacity="0.2"/>
+            </filter>
+          </defs>
+          <!-- BG circle -->
+          <circle cx="180" cy="180" r="160" fill="url(#bg)" stroke="#8B1A1A" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+          <!-- Flow lines -->
+          <path d="M 40 200 Q 100 140 180 160 Q 260 180 310 130" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5 5" opacity=".2" fill="none"/>
+          <path d="M 50 230 Q 120 210 200 220 Q 270 225 330 190" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5 5" opacity=".15" fill="none"/>
+          <!-- Healthy RBCs -->
+          <g filter="url(#shadow)" style="animation:float1 3.5s ease-in-out infinite">
+            <ellipse cx="130" cy="145" rx="44" ry="28" fill="url(#rbc1)"/>
+            <ellipse cx="130" cy="145" rx="24" ry="13" fill="#6B1010" opacity=".45"/>
+          </g>
+          <g filter="url(#shadow)" style="animation:float2 4s ease-in-out infinite">
+            <ellipse cx="240" cy="135" rx="38" ry="24" fill="url(#rbc1)"/>
+            <ellipse cx="240" cy="135" rx="20" ry="10" fill="#6B1010" opacity=".45"/>
+          </g>
+          <g filter="url(#shadow)" style="animation:float3 3.8s ease-in-out infinite">
+            <ellipse cx="185" cy="210" rx="42" ry="26" fill="url(#rbc2)"/>
+            <ellipse cx="185" cy="210" rx="22" ry="12" fill="#5A0E0E" opacity=".45"/>
+          </g>
+          <g filter="url(#shadow)" style="animation:float1 5s ease-in-out infinite">
+            <ellipse cx="100" cy="225" rx="34" ry="21" fill="url(#rbc1)"/>
+            <ellipse cx="100" cy="225" rx="18" ry="9" fill="#6B1010" opacity=".45"/>
+          </g>
+          <!-- Pale/anemia RBCs -->
+          <g style="animation:float2 4.5s ease-in-out infinite">
+            <ellipse cx="265" cy="215" rx="36" ry="22" fill="url(#pale)" stroke="#FCA5A5" stroke-width="1.5"/>
+            <ellipse cx="265" cy="215" rx="18" ry="9" fill="#FEE2E2" opacity=".7"/>
+          </g>
+          <g style="animation:float3 3.2s ease-in-out infinite">
+            <ellipse cx="155" cy="285" rx="30" ry="18" fill="url(#pale)" stroke="#FCA5A5" stroke-width="1.5"/>
+            <ellipse cx="155" cy="285" rx="15" ry="7" fill="#FEE2E2" opacity=".7"/>
+          </g>
+          <!-- Labels -->
+          <text x="74" y="182" font-family="DM Sans" font-size="10" fill="#8B1A1A" font-weight="600">Sel Darah Merah Sehat</text>
+          <text x="220" y="252" font-family="DM Sans" font-size="10" fill="#B33A3A" font-weight="600">Sel Pucat (Anemia)</text>
+          <!-- Center Hb badge -->
+          <circle cx="180" cy="340" r="0" fill="none"/>
+          <rect x="65" y="315" width="230" height="36" rx="18" fill="#8B1A1A"/>
+          <text x="180" y="338" font-family="Playfair Display" font-size="13" fill="white" text-anchor="middle" font-weight="700">Hemoglobin &lt; 12 g/dL → Anemia</text>
+        </svg>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes float1 {
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+            50% {
+                transform: translateY(-8px)
+            }
+        }
+        
+        @keyframes float2 {
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+            50% {
+                transform: translateY(-5px)
+            }
+        }
+        
+        @keyframes float3 {
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+    </style>
+
+    <!-- PENGERTIAN -->
+    <section id="pengertian">
+        <p class="section-label reveal">— Dasar Ilmu</p>
+        <h2 class="reveal">Apa Itu <em style="color:var(--crimson);font-style:italic">Anemia</em>?</h2>
+        <p class="lead reveal">Secara medis, anemia adalah kondisi di mana jumlah sel darah merah (eritrosit) atau kadar hemoglobin dalam darah berada di bawah nilai normal. Hemoglobin adalah protein dalam sel darah merah yang bertugas membawa oksigen dari paru-paru ke seluruh
+            jaringan tubuh.</p>
+        <div class="def-grid">
+            <div class="def-card reveal">
+                <div class="def-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Definisi WHO</h3>
+                <p>Menurut Organisasi Kesehatan Dunia (WHO), seseorang dinyatakan menderita anemia apabila kadar hemoglobin (Hb) di bawah <strong>13 g/dL pada pria dewasa</strong> dan di bawah <strong>12 g/dL pada wanita dewasa</strong>. Pada ibu hamil,
+                    batasnya adalah 11 g/dL.</p>
+            </div>
+            <div class="def-card reveal">
+                <div class="def-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+                </div>
+                <h3>Jenis-Jenis Anemia</h3>
+                <p>Terdapat lebih dari 400 jenis anemia. Yang paling umum: <strong>Anemia defisiensi besi</strong> (IDA), <strong>anemia megaloblastik</strong> (kekurangan B12/folat), <strong>anemia aplastik</strong> (sumsum tulang tidak produksi), dan <strong>anemia hemolitik</strong>                    (sel darah merah hancur terlalu cepat).</p>
+            </div>
+            <div class="def-card reveal">
+                <div class="def-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22C6.5 22 2 17.5 2 12C2 8.4 3.9 5.3 6.8 3.5L8 8L12 2L16 8L17.2 3.5C20.1 5.3 22 8.4 22 12C22 17.5 17.5 22 12 22Z"/></svg>
+                </div>
+                <h3>Peran Hemoglobin</h3>
+                <p>Hemoglobin adalah "truk pengangkut" oksigen dalam tubuh. Saat kadarnya rendah, sel-sel di seluruh tubuh kekurangan pasokan oksigen — inilah yang menyebabkan rasa lelah, pucat, dan berbagai gangguan fungsi organ yang menjadi ciri khas anemia.</p>
+            </div>
+            <div class="def-card reveal">
+                <div class="def-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v18H3z" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                </div>
+                <h3>Prevalensi di Indonesia</h3>
+                <p>Data Riset Kesehatan Dasar (Riskesdas) menunjukkan anemia masih menjadi masalah kesehatan masyarakat yang signifikan di Indonesia, terutama pada kelompok rentan: ibu hamil, anak balita, dan remaja putri di usia subur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENYEBAB -->
+    <section id="penyebab">
+        <p class="section-label reveal">— Akar Masalah</p>
+        <h2 class="reveal">Penyebab &amp; Faktor Risiko</h2>
+        <p class="lead reveal">Penting untuk membedakan antara <strong>penyebab langsung</strong> (kondisi medis yang memicu anemia) dan <strong>faktor risiko</strong> (keadaan yang memperbesar kemungkinan seseorang terkena anemia).</p>
+        <div class="cause-layout">
+            <div class="cause-col reveal">
+                <h3>⚡ Penyebab Langsung</h3>
+                <div class="cause-item">
+                    <div class="cause-num">1</div>
+                    <div>
+                        <strong>Kekurangan Zat Besi (Fe)</strong>
+                        <p>Penyebab paling umum. Tubuh kekurangan zat besi untuk membentuk hemoglobin yang cukup, akibat asupan makanan yang rendah atau penyerapan yang terganggu.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num">2</div>
+                    <div>
+                        <strong>Kekurangan Vitamin B12 &amp; Asam Folat</strong>
+                        <p>Kedua nutrisi ini dibutuhkan untuk pembentukan sel darah merah yang sehat. Kekurangannya menyebabkan anemia megaloblastik—sel darah merah berukuran besar tapi tidak berfungsi normal.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num">3</div>
+                    <div>
+                        <strong>Perdarahan Kronis</strong>
+                        <p>Kehilangan darah perlahan dan terus-menerus akibat menstruasi berat, ulkus lambung, atau wasir dapat menguras cadangan zat besi secara bertahap.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num">4</div>
+                    <div>
+                        <strong>Gangguan Sumsum Tulang</strong>
+                        <p>Kondisi seperti anemia aplastik, leukemia, atau efek samping kemoterapi dapat mengganggu produksi sel darah merah di sumsum tulang.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num">5</div>
+                    <div>
+                        <strong>Penghancuran Sel Darah Merah (Hemolisis)</strong>
+                        <p>Penyakit seperti malaria atau kelainan autoimun menyebabkan sel darah merah hancur lebih cepat dari kemampuan tubuh untuk menggantinya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cause-col reveal">
+                <h3>🎯 Faktor Risiko</h3>
+                <div class="cause-item">
+                    <div class="cause-num" style="background:var(--gold)">▲</div>
+                    <div>
+                        <strong>Kehamilan</strong>
+                        <p>Volume darah meningkat drastis selama kehamilan, sehingga kebutuhan zat besi dan folat melonjak. Ini membuat ibu hamil sangat rentan mengalami anemia.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num" style="background:var(--gold)">▲</div>
+                    <div>
+                        <strong>Usia (Anak &amp; Lansia)</strong>
+                        <p>Anak dalam masa pertumbuhan memerlukan lebih banyak zat besi. Lansia sering mengalami penurunan penyerapan nutrisi dan lebih rentan terhadap penyakit kronis yang menyebabkan anemia.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num" style="background:var(--gold)">▲</div>
+                    <div>
+                        <strong>Faktor Genetik</strong>
+                        <p>Riwayat keluarga dengan thalassemia atau anemia sel sabit meningkatkan risiko mewarisi gangguan sel darah merah yang bersifat turun-temurun.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num" style="background:var(--gold)">▲</div>
+                    <div>
+                        <strong>Pola Makan Tidak Seimbang</strong>
+                        <p>Diet vegetarian/vegan ketat tanpa suplementasi, atau kebiasaan makan rendah nutrisi penting, dapat membuat seseorang kekurangan zat besi dan vitamin B12.</p>
+                    </div>
+                </div>
+                <div class="cause-item">
+                    <div class="cause-num" style="background:var(--gold)">▲</div>
+                    <div>
+                        <strong>Penyakit Kronis</strong>
+                        <p>Penyakit ginjal kronis, kanker, rheumatoid arthritis, atau infeksi kronis dapat mengganggu produksi sel darah merah secara tidak langsung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GEJALA -->
+    <section id="gejala">
+        <p class="section-label reveal">— Kenali Tandanya</p>
+        <h2 class="reveal">Gejala Anemia: <em style="color:var(--crimson);font-style:italic">5L</em> dan Lebih</h2>
+        <p class="lead reveal">Di Indonesia, masyarakat mengenal tanda-tanda anemia dengan akronim <strong>"5L"</strong>. Hover pada kartu di bawah untuk informasi lebih lanjut.</p>
+        <div class="lima-l-grid">
+            <div class="lima-card reveal">
+                <div class="lima-letter">L</div>
+                <div class="lima-word">LESU</div>
+                <div class="lima-desc">Tubuh terasa tidak bertenaga dan kurang bergairah dalam menjalani aktivitas sehari-hari.</div>
+            </div>
+            <div class="lima-card reveal">
+                <div class="lima-letter">L</div>
+                <div class="lima-word">LELAH</div>
+                <div class="lima-desc">Kelelahan ekstrem bahkan setelah beristirahat cukup, akibat sel tubuh kekurangan oksigen.</div>
+            </div>
+            <div class="lima-card reveal">
+                <div class="lima-letter">L</div>
+                <div class="lima-word">LETIH</div>
+                <div class="lima-desc">Rasa penat berkepanjangan yang tidak kunjung hilang meski sudah tidur dan beristirahat.</div>
+            </div>
+            <div class="lima-card reveal">
+                <div class="lima-letter">L</div>
+                <div class="lima-word">LEMAH</div>
+                <div class="lima-desc">Kekuatan fisik menurun; aktivitas ringan seperti naik tangga terasa sangat melelahkan.</div>
+            </div>
+            <div class="lima-card reveal">
+                <div class="lima-letter">L</div>
+                <div class="lima-word">LALAI</div>
+                <div class="lima-desc">Sulit berkonsentrasi, mudah lupa, dan kemampuan kognitif menurun akibat otak kekurangan oksigen.</div>
+            </div>
+        </div>
+        <div class="other-symptoms reveal">
+            <h3>Gejala Spesifik Lainnya</h3>
+            <div class="sym-grid">
+                <div class="sym-item"><span class="sym-dot"></span>Kulit, bibir, dan kuku pucat (tidak berwarna merah muda)</div>
+                <div class="sym-item"><span class="sym-dot"></span>Detak jantung cepat atau tidak teratur (palpitasi)</div>
+                <div class="sym-item"><span class="sym-dot"></span>Sesak napas saat beraktivitas ringan</div>
+                <div class="sym-item"><span class="sym-dot"></span>Sakit kepala dan pusing saat berdiri tiba-tiba</div>
+                <div class="sym-item"><span class="sym-dot"></span>Tangan dan kaki terasa dingin</div>
+                <div class="sym-item"><span class="sym-dot"></span>Nyeri dada ringan</div>
+                <div class="sym-item"><span class="sym-dot"></span>Glositis—lidah terasa nyeri dan berwarna pucat</div>
+                <div class="sym-item"><span class="sym-dot"></span>Pica—keinginan memakan benda tidak lazim (es, tanah)</div>
+                <div class="sym-item"><span class="sym-dot"></span>Kuku mudah patah dan berbentuk seperti sendok (koilonychia)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAMPAK -->
+    <section id="dampak">
+        <p class="section-label reveal">— Konsekuensi</p>
+        <h2 class="reveal">Dampak Jika Tidak Diobati</h2>
+        <p class="lead reveal">Anemia yang tidak ditangani bukan hanya soal kelelahan. Seiring waktu, kondisi ini dapat menimbulkan komplikasi serius yang memengaruhi kualitas hidup dan mengancam nyawa.</p>
+        <div class="dampak-grid">
+            <div class="dampak-card danger reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <h3>Gagal Jantung</h3>
+                <p>Jantung bekerja lebih keras untuk memompa darah yang lebih banyak guna memenuhi kebutuhan oksigen tubuh. Kerja keras jangka panjang ini dapat menyebabkan pembesaran jantung dan akhirnya gagal jantung kongestif.</p>
+            </div>
+            <div class="dampak-card reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+                </div>
+                <h3>Gangguan Tumbuh Kembang Anak</h3>
+                <p>Pada anak-anak, anemia berdampak pada perkembangan otak dan kognitif. Anak yang anemia cenderung memiliki kemampuan belajar yang lebih rendah, prestasi akademik buruk, dan pertumbuhan fisik yang terhambat.</p>
+            </div>
+            <div class="dampak-card reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Komplikasi Kehamilan</h3>
+                <p>Ibu hamil yang menderita anemia berisiko melahirkan prematur, bayi lahir dengan berat badan rendah (BBLR), serta meningkatkan risiko kematian ibu saat persalinan akibat perdarahan yang memperparah kondisi.</p>
+            </div>
+            <div class="dampak-card reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-3.14Z"/></svg>
+                </div>
+                <h3>Imunitas Menurun</h3>
+                <p>Kekurangan zat besi memengaruhi fungsi sel imun tubuh, membuat penderita lebih rentan terhadap infeksi berulang seperti infeksi saluran pernapasan atas dan infeksi lainnya.</p>
+            </div>
+            <div class="dampak-card reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
+                <h3>Penurunan Produktivitas</h3>
+                <p>Kelelahan kronis dan gangguan konsentrasi akibat anemia secara signifikan menurunkan produktivitas kerja dan kualitas hidup penderita, berdampak pula pada perekonomian keluarga dan negara.</p>
+            </div>
+            <div class="dampak-card reveal">
+                <div class="d-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h3>Krisis Organ pada Kasus Berat</h3>
+                <p>Anemia berat yang tidak mendapat penanganan medis dapat menyebabkan hipoksia (kekurangan oksigen) pada organ vital seperti otak dan ginjal, berpotensi menyebabkan kerusakan permanen atau syok.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAGNOSIS -->
+    <section id="diagnosis">
+        <p class="section-label reveal">— Langkah Medis</p>
+        <h2 class="reveal">Cara Mendiagnosis Anemia</h2>
+        <p class="lead reveal">Diagnosis anemia tidak bisa hanya berdasarkan gejala. Dokter menggunakan serangkaian pemeriksaan untuk memastikan diagnosis dan menentukan jenis serta penyebab anemia yang tepat.</p>
+        <div class="diag-layout">
+            <div class="diag-steps">
+                <div class="diag-step reveal">
+                    <div class="step-circle">1</div>
+                    <div class="step-content">
+                        <strong>Anamnesis (Riwayat Medis)</strong>
+                        <p>Dokter menanyakan gejala, pola makan, riwayat menstruasi, penggunaan obat-obatan, dan riwayat penyakit dalam keluarga untuk memetakan kemungkinan penyebab.</p>
+                    </div>
+                </div>
+                <div class="diag-step reveal">
+                    <div class="step-circle">2</div>
+                    <div class="step-content">
+                        <strong>Pemeriksaan Fisik</strong>
+                        <p>Dokter memeriksa tanda-tanda fisik: warna kulit, konjungtiva mata, kondisi kuku, detak jantung, dan pembesaran organ seperti limpa atau hati.</p>
+                    </div>
+                </div>
+                <div class="diag-step reveal">
+                    <div class="step-circle">3</div>
+                    <div class="step-content">
+                        <strong>Hitung Darah Lengkap (Complete Blood Count / CBC)</strong>
+                        <p>Tes darah utama untuk mendiagnosis anemia. Mengukur kadar Hb, hematokrit, jumlah sel darah merah, MCV (ukuran sel), MCH, dan komponen lainnya.</p>
+                    </div>
+                </div>
+                <div class="diag-step reveal">
+                    <div class="step-circle">4</div>
+                    <div class="step-content">
+                        <strong>Tes Tambahan (Bila Perlu)</strong>
+                        <p>Pemeriksaan serum feritin, transferrin, vitamin B12, folat, retikulosit, atau apusan darah tepi untuk menentukan jenis dan penyebab spesifik anemia.</p>
+                    </div>
+                </div>
+                <div class="diag-step reveal">
+                    <div class="step-circle">5</div>
+                    <div class="step-content">
+                        <strong>Biopsi Sumsum Tulang (Kasus Khusus)</strong>
+                        <p>Dilakukan bila dokter mencurigai anemia aplastik atau keganasan hematologi. Prosedur ini mengambil sampel dari tulang pinggul untuk diperiksa di laboratorium.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cbc-card reveal">
+                <h3>📋 Parameter Darah Normal vs. Anemia</h3>
+                <table class="cbc-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Normal</th>
+                            <th>Anemia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hb Pria</td>
+                            <td><span class="normal-tag">13.5–17.5 g/dL</span></td>
+                            <td><span class="anemia-tag">&lt; 13 g/dL</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hb Wanita</td>
+                            <td><span class="normal-tag">12.0–15.5 g/dL</span></td>
+                            <td><span class="anemia-tag">&lt; 12 g/dL</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hb Ibu Hamil</td>
+                            <td><span class="normal-tag">≥ 11.0 g/dL</span></td>
+                            <td><span class="anemia-tag">&lt; 11 g/dL</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hematokrit (Pria)</td>
+                            <td><span class="normal-tag">41–53%</span></td>
+                            <td><span class="anemia-tag">&lt; 41%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hematokrit (Wanita)</td>
+                            <td><span class="normal-tag">36–46%</span></td>
+                            <td><span class="anemia-tag">&lt; 36%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Serum Feritin</td>
+                            <td><span class="normal-tag">20–250 ng/mL</span></td>
+                            <td><span class="anemia-tag">&lt; 12 ng/mL</span></td>
+                        </tr>
+                        <tr>
+                            <td>MCV</td>
+                            <td><span class="normal-tag">80–100 fL</span></td>
+                            <td><span class="anemia-tag">Rendah/Tinggi</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:.73rem;color:var(--slate);margin-top:1rem;line-height:1.6">⚠️ Nilai di atas bersifat umum/panduan. Interpretasi hasil pemeriksaan harus dilakukan oleh tenaga medis yang berwenang sesuai kondisi klinis pasien.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENCEGAHAN -->
+    <section id="pencegahan">
+        <p class="section-label reveal">— Langkah Proaktif</p>
+        <h2 class="reveal">Pencegahan &amp; Pola Hidup Sehat</h2>
+        <p class="lead reveal">Kabar baiknya: sebagian besar kasus anemia—terutama anemia defisiensi besi—dapat dicegah dengan perubahan pola makan dan gaya hidup yang konsisten.</p>
+        <div class="prev-grid">
+            <div class="prev-card reveal">
+                <div class="prev-card-head">
+                    <div class="prev-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2l1.5 9h15L21 2"/><path d="M3 11a9 9 0 0 0 18 0"/></svg>
+                    </div>
+                    <h3>Makanan Kaya Zat Besi (Heme)</h3>
+                </div>
+                <ul class="food-list">
+                    <li>Daging merah tanpa lemak (sapi, kambing) — sumber zat besi heme terbaik yang mudah diserap</li>
+                    <li>Hati ayam atau hati sapi — sangat kaya zat besi, vitamin B12, dan folat sekaligus</li>
+                    <li>Ikan dan seafood (tiram, kerang) — mengandung zat besi heme yang bioavailabilitasnya tinggi</li>
+                    <li>Unggas (ayam, kalkun) — alternatif lebih rendah lemak namun tetap mengandung zat besi heme</li>
+                </ul>
+            </div>
+            <div class="prev-card reveal">
+                <div class="prev-card-head">
+                    <div class="prev-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Makanan Nabati Kaya Zat Besi (Non-Heme)</h3>
+                </div>
+                <ul class="food-list">
+                    <li>Tempe dan tahu — sumber zat besi nabati yang terjangkau dan mudah ditemukan di Indonesia</li>
+                    <li>Sayuran hijau gelap: bayam, kangkung, brokoli — kaya folat dan zat besi non-heme</li>
+                    <li>Kacang-kacangan: kacang merah, lentil, kacang chickpea — tinggi zat besi dan protein nabati</li>
+                    <li>Biji-bijian: wijen, biji labu, quinoa — camilan bergizi yang menyumbang zat besi harian</li>
+                </ul>
+            </div>
+            <div class="prev-card reveal">
+                <div class="prev-card-head">
+                    <div class="prev-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+                    </div>
+                    <h3>Tingkatkan Penyerapan Zat Besi</h3>
+                </div>
+                <ul class="food-list">
+                    <li><strong>Konsumsi Vitamin C bersamaan</strong> — jeruk, jambu, tomat membantu penyerapan zat besi non-heme hingga 3–6 kali lipat</li>
+                    <li><strong>Hindari kopi & teh saat makan</strong> — tanin dalam keduanya menghambat penyerapan zat besi secara signifikan</li>
+                    <li><strong>Hindari kalsium tinggi bersamaan</strong> — susu atau suplemen kalsium dapat berkompetisi dengan penyerapan zat besi</li>
+                    <li><strong>Masak dengan wajan besi cor</strong> — memasak makanan asam (saus tomat) di wajan besi dapat meningkatkan kandungan zat besi makanan</li>
+                </ul>
+            </div>
+            <div class="prev-card reveal">
+                <div class="prev-card-head">
+                    <div class="prev-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                    </div>
+                    <h3>Gaya Hidup &amp; Suplementasi</h3>
+                </div>
+                <ul class="food-list">
+                    <li><strong>Suplemen zat besi &amp; folat untuk ibu hamil</strong> — konsumsi rutin sesuai anjuran dokter untuk mencegah anemia gestasional</li>
+                    <li><strong>Tablet tambah darah untuk remaja putri</strong> — program pemerintah: 1 tablet/minggu, sangat dianjurkan untuk remaja usia sekolah</li>
+                    <li><strong>Cegah infeksi parasit usus</strong> — kecacingan adalah penyebab tersembunyi anemia di Indonesia; jaga kebersihan dan lakukan deworming rutin</li>
+                    <li><strong>Pemeriksaan darah rutin</strong> — cek Hb minimal 6 bulan sekali, terutama bagi kelompok risiko tinggi (hamil, balita, lansia)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Kenali Anemia</strong> — Website Edukasi Kesehatan</p>
+        <p style="margin-top:.4rem">Konten ini bersifat informatif dan tidak menggantikan konsultasi medis profesional.<br/>Selalu konsultasikan kondisi kesehatan Anda kepada dokter atau tenaga kesehatan terpercaya.</p>
+        <p style="margin-top:.8rem">Referensi: WHO Guidelines, Kemenkes RI, Riskesdas 2023 &nbsp;·&nbsp; © 2025 Kenali Anemia</p>
+    </footer>
+
+    <script>
+        // Smooth scroll nav & mobile toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    // Stagger siblings
+                    const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+                    const idx = siblings.indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Active nav link highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navAs = navLinks.querySelectorAll('a');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+            });
+            navAs.forEach(a => {
+                a.style.color = a.getAttribute('href') === `#${cur}` ? 'var(--crimson)' : '';
+            });
+        }, {
+            passive: true
+        });
+    </script>
+</body>
+
+</html>
